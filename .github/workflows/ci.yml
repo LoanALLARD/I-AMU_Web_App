@@ -22,7 +22,7 @@ jobs:
 
       # 3. Analyse du code (Niveau 9)
       - name: Static Analysis (PHPStan)
-        run: phpstan analyse src --level=9
+        run: phpstan analyse app --level=9
 
       # 4. Tests unitaires
       - name: Run Tests (PHPUnit)
