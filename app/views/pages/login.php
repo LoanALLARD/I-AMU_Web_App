@@ -1,12 +1,13 @@
-
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion</title>
     <link rel="stylesheet" href="/assets/css/auth.css">
 </head>
+
 <body>
     <div class="form-container">
         <div class="form-title">Connexion</div>
@@ -35,4 +36,5 @@
         <a class="form-link" href="/index.php?url=forgottenpassword/index">Mot de passe oublié ?</a>
     </div>
 </body>
+
 </html>
