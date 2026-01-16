@@ -10,4 +10,4 @@ $router->addRoute('/login', 'HomeController', 'index');
 $router->addRoute('/register', 'RegisterController', 'index');
 
 // Exécution
-$router->run($_SERVER['REQUEST_URI']);
+$router->run((string) $_SERVER['REQUEST_URI']);

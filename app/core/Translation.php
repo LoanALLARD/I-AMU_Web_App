@@ -13,9 +13,9 @@ class Translation
     public static function init(?string $lang = null): void
     {
         if ($lang !== null) {
-            self::$lang = $lang;
+            self::$lang = (string) $lang;
         } else if (isset($_SESSION['lang'])) {
-            self::$lang = $_SESSION['lang'];
+            self::$lang = (string) $_SESSION['lang'];
         }
         $file = __DIR__ . "/../config/languages/translation-" . self::$lang . ".json";
         if (file_exists($file)) {
