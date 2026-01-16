@@ -4,20 +4,27 @@ namespace App\core;
 
 class Translation
 {
+    private static $translations = [];
+    private static $lang = 'fr';
 
-    private $translations = [];
-
-    public function __construct($lang = 'fr')
+    public static function init($lang = null)
     {
-        $file = __DIR__ . "/../config/languages/translation-$lang.json";
+        if ($lang !== null) {
+            self::$lang = $lang;
+        } else if (isset($_SESSION['lang'])) {
+            self::$lang = $_SESSION['lang'];
+        }
+        $file = __DIR__ . "/../config/languages/translation-" . self::$lang . ".json";
         if (file_exists($file)) {
-            $this->translations = json_decode(file_get_contents($file), true);
+            self::$translations = json_decode(file_get_contents($file), true);
         }
     }
 
-    public function get($key)
+    public static function get($key)
     {
-        return $this->translations[$key] ?? $key;
+        if (empty(self::$translations)) {
+            self::init();
+        }
+        return self::$translations[$key] ?? $key;
     }
-
 }

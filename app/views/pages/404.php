@@ -1,22 +1,19 @@
-<!DOCTYPE html>
-<html lang="fr">
+<?php
+    $pageTitle = "404";
+    include __DIR__ . '/../layout/header.php';
+    use App\core\Translation;
+?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Page non trouvée</title>
-    <link rel="stylesheet" href="/assets/css/404.css">
-</head>
+    <body>
+        <main>
+            <div class="error-container">
+                <div class="error-code">404</div>
+                <div class="error-message"><?= Translation::get("404.errorMessage.title"); ?></div>
+                <a class="home-link" href="/login"><?= Translation::get("404.errorMessage.backButton"); ?></a>
+            </div>
+        </main>
 
-<body>
-    <div class="error-container">
-        <div class="error-code">404</div>
-        <div class="error-message">Oups ! Cette page n'existe pas.<br>Retour à l'accueil ?</div>
-        <a class="home-link" href="/login">Accueil</a>
-    </div>
+        <?php include __DIR__ . '/../layout/footer.php'; ?>
 
-    <?php include __DIR__ . '/../layout/footer.php'; ?>
-
-</body>
-
+    </body>
 </html>

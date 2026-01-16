@@ -1,40 +1,38 @@
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connexion</title>
-    <link rel="stylesheet" href="/assets/css/auth.css">
-</head>
+<?php
+    include __DIR__ . '/../layout/header.php';
+    use App\core\Translation;
+?>
 
 <body>
-    <div class="form-container">
-        <div class="form-title">Connexion</div>
-        <form method="POST" action="/index.php?url=login/login">
-            <?php if (isset($errorMessage)): ?>
-                <div class="alert alert-error">
-                    <?= htmlspecialchars($errorMessage) ?>
+    <main>
+        <div class="form-container">
+            <div class="form-title"><?= Translation::get("login.form.title") ?></div>
+            <form method="POST" action="/index.php?url=login/login">
+                <?php if (isset($errorMessage)): ?>
+                    <div class="alert alert-error">
+                        <?= htmlspecialchars($errorMessage) ?>
+                    </div>
+                <?php endif; ?>
+                <?php if (isset($successMessage)): ?>
+                    <div class="alert alert-success">
+                        <?= htmlspecialchars($successMessage) ?>
+                    </div>
+                <?php endif; ?>
+                <div class="form-group">
+                    <label for="email"><?= Translation::get("login.form.email.title") ?></label>
+                    <input type="text" id="email" name="email" required placeholder=<?= Translation::get("login.form.email.input.placeholder") ?>>
                 </div>
-            <?php endif; ?>
-            <?php if (isset($successMessage)): ?>
-                <div class="alert alert-success">
-                    <?= htmlspecialchars($successMessage) ?>
+                <div class="form-group">
+                    <label for="password"><?= Translation::get("login.form.password.title") ?></label>
+                    <input type="password" id="password" name="password" required placeholder="**********">
                 </div>
-            <?php endif; ?>
-            <div class="form-group">
-                <label for="email">Mail universitaire</label>
-                <input type="text" id="email" name="email" required placeholder="prenom.nom@univ-amu.fr">
-            </div>
-            <div class="form-group">
-                <label for="password">Mot de passe</label>
-                <input type="password" id="password" name="password" required placeholder="**********">
-            </div>
-            <button class="form-submit" type="submit">Connexion</button>
-        </form>
-        <a class="form-link" href="/index.php?url=register/index">Vous n'avez pas de compte ?</a>
-        <a class="form-link" href="/index.php?url=forgottenpassword/index">Mot de passe oublié ?</a>
-    </div>
+                <button class="form-submit" type="submit"><?= Translation::get("login.form.loginButton.title") ?></button>
+            </form>
+            <a class="form-link" href="/register"><?= Translation::get("login.form.notRegister.placeholder") ?></a>
+            <a class="form-link" href="/forgottenpassword"><?= Translation::get("login.form.forgottenPassword.placeholder") ?></a>
+        </div>
+    </main>
+    <?php include __DIR__ . '/../layout/footer.php'; ?>
 </body>
 
 </html>

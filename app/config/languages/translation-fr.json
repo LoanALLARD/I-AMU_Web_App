@@ -5,12 +5,20 @@
 
   "login.form.title" : "Connexion",
   "login.form.email.title" : "Mail universitaire",
+  "login.form.email.input.placeholder" : "prenom.nom@univ-amu.fr",
   "login.form.password.title" : "Mot de passe",
+  "login.form.loginButton.title" : "Connexion",
   "login.form.notRegister.placeholder" : "Vous n'avez pas de compte ?",
   "login.form.forgottenPassword.placeholder" : "Mot de passe oublié ?",
 
   "register.form.title" : "Inscription",
   "register.form.email.title" : "Mail universitaire",
+  "register.form.email.input.placeholder" : "prenom.nom@univ-amu.fr",
   "register.form.password.title" : "Mot de passe",
-  "register.form.confirmPassword.title" : "Confirmer le mot de passe"
+  "register.form.confirmPassword.title" : "Confirmer le mot de passe",
+  "register.form.registerButton.title" : "S'inscrire",
+  "register.form.alreadyRegistered.placeholder" : "Déjà un compte ? Se connecter",
+
+  "404.errorMessage.title" : "Oups ! Cette page n'existe pas.<br>Retour à l'accueil ?",
+  "404.errorMessage.backButton" : "Accueil"
 }
